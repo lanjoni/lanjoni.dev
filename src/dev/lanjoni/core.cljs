@@ -48,5 +48,6 @@
 
 (defn ^:export init []
   (refx/dispatch-sync [:initialize-db])
+  (refx/dispatch [:set-dark-mode true])
   (init-routes!)
   (render))

@@ -32,3 +32,8 @@
  :set-session
  (fn [db [_ session]]
    (assoc db :session session)))
+
+(refx/reg-event-db
+ :set-dark-mode
+ (fn [db [_ dark-mode]]
+   (assoc db :dark-mode dark-mode)))

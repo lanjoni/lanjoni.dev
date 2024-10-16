@@ -15,3 +15,8 @@
  :current-route
  (fn [db]
    (:current-route db)))
+
+(refx/reg-sub
+ :dark-mode
+ (fn [db _]
+   (:dark-mode db)))

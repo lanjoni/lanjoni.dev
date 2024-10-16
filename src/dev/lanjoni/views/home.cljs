@@ -4,7 +4,7 @@
    [helix.core :refer [$ defnc]]
    [helix.dom :as d]))
 
-(defnc home []
+(defnc home [{:keys [_]}]
   ($ landing
      {:content
       (d/div

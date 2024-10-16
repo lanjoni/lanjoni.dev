@@ -6,7 +6,7 @@
    [helix.core :refer [$ defnc]]
    [helix.dom :as d]))
 
-(defnc about []
+(defnc about [{:keys [_]}]
   ($ landing
      {:content
       (d/div
