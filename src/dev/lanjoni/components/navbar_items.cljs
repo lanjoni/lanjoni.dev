@@ -11,13 +11,12 @@
    (d/li
     (d/a
      {:href "/#/"}
-     "Home"))
+     "home"))
    (d/li
     (d/a
      {:href "/#/about"}
-     "About"))
+     "about"))
    (d/li
     (d/a
-     {:href   "https://blog.lanjoni.dev"
-      :target "_blank"}
-     "Blog"))))
+     {:href   "/#/writing"}
+     "writing"))))
