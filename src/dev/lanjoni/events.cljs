@@ -37,3 +37,8 @@
  :set-dark-mode
  (fn [db [_ dark-mode]]
    (assoc db :dark-mode dark-mode)))
+
+(refx/reg-event-db
+ :set-content
+ (fn [db [_ content]]
+   (assoc db :content content)))

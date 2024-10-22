@@ -20,3 +20,8 @@
  :dark-mode
  (fn [db _]
    (:dark-mode db)))
+
+(refx/reg-sub
+ :content
+ (fn [db]
+   (:content db)))
