@@ -71,9 +71,9 @@ Elixir 1.13.4 (compiled with Erlang/OTP 23)
 
 ### Installing ScyllaDB
 
-There are several ways to use ScyllaDB, which you can use with [ScyllaDB Cloud](https://www.scylladb.com/product/scylla-cloud/), with ScyllaDB [installed on your machine](https ://opensource.docs.scylladb.com/stable/getting-started/install-scylla/) or the way I will use it: with Docker containers.
+There are several ways to use ScyllaDB, which you can use with [ScyllaDB Cloud](https://www.scylladb.com/product/scylla-cloud/), with ScyllaDB [installed on your machine](https://opensource.docs.scylladb.com/stable/getting-started/install-scylla/) or the way I will use it: with Docker containers.
 
-If you don't already have Docker installed, I recommend accessing the [installation] guide (https://docs.docker.com/engine/install/). If you want to use ScyllaDB Cloud or ScyllaDB installed on your machine, there's no problem, just be careful when placing the node links when initializing and configuring the project, but when we get to this part I'll explain it better.
+If you don't already have Docker installed, I recommend accessing the [installation guide](https://docs.docker.com/engine/install/). If you want to use ScyllaDB Cloud or ScyllaDB installed on your machine, there's no problem, just be careful when placing the node links when initializing and configuring the project, but when we get to this part I'll explain it better.
 
 Well, continuing... To run our container with ScyllaDB in Docker we will use the following command:
 
