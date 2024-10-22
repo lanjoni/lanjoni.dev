@@ -14,11 +14,13 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-markdown": "^8.0.0",
     "shadow-cljs": "^2.28.10",
     "tailwindcss": "^3.4.4",
     "use-sync-external-store": "1.2.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
     "concurrently": "^8.2.2",
     "daisyui": "^4.12.13"
   }

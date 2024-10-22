@@ -7,6 +7,7 @@ module.exports = {
     './src/dev/lanjoni/**/*.cljs'
   ],
   plugins: [
+    require("@tailwindcss/typography"),
     require('daisyui'),
   ],
   daisyui: {

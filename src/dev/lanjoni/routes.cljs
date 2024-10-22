@@ -1,7 +1,9 @@
 (ns dev.lanjoni.routes
   (:require
    [dev.lanjoni.views.about :refer [about]]
+   [dev.lanjoni.views.content :refer [content]]
    [dev.lanjoni.views.home :refer [home]]
+   [dev.lanjoni.views.writing :refer [writing]]
    [refx.alpha :as refx]))
 
 (def routes
@@ -20,6 +22,26 @@
     {:name      ::about
      :view      about
      :link-text "about"
+     :controllers
+     [{;; Do whatever initialization needed for home page
+       ;; I.e (refx/dispatch [::events/load-something-with-ajax])
+       ;; Teardown can be done here.
+       }]}]
+
+   ["writing"
+    {:name      ::writing
+     :view      writing
+     :link-text "writing"
+     :controllers
+     [{;; Do whatever initialization needed for home page
+       ;; I.e (refx/dispatch [::events/load-something-with-ajax])
+       ;; Teardown can be done here.
+       }]}]
+
+   ["writing/:content-name"
+    {:name      ::content
+     :view      content
+     :link-text "content"
      :controllers
      [{;; Do whatever initialization needed for home page
        ;; I.e (refx/dispatch [::events/load-something-with-ajax])
