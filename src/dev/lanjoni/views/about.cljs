@@ -42,10 +42,8 @@
            :content (d/p
                      {:className "text-xl space-x-3 break-words"}
                      "computer technician and future bachelor of science in information systems at "
-                     (d/a {:href "https://vtp.ifsp.edu.br/"
-                           :target "_blank"
-                           :className "underline hover:text-[#820CD1] transition duration-300"}
-                          "ifsp")
+                     ($ link {:url "https://vtp.ifsp.edu.br/"
+                              :title "ifsp"})
                      ". i really like my college and the people i met there.")})
 
        ($ content-topic
