@@ -3,5 +3,15 @@
 @tailwind utilities;
 
 body {
-  font-family: 'JetBrains Mono';font-size: 22px;
+  font-family: 'JetBrains Mono';
+  font-size: 22px;
+}
+
+blockquote {
+  quotes: none !important;
+}
+
+blockquote::before,
+blockquote::after {
+  content: none !important;
 }
