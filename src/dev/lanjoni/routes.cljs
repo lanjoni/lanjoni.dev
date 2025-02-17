@@ -4,7 +4,7 @@
             [dev.lanjoni.views.content.state :as content.state]
             [dev.lanjoni.views.home :refer [home]]
             [dev.lanjoni.views.writing :refer [writing]]
-            [refx.alpha :as refx]))
+            #_[refx.alpha :as refx]))
 
 (def routes
   ["/"
@@ -35,6 +35,6 @@
                              (let [{:keys [content-name]} (-> params first :path)]
                                (content.state/content-fetch content-name)))}]}]
 
-   ["not-found*"
-    {:name ::not-found
-     :view #(refx/dispatch [:push-state ::home])}]])
+   #_["not-found*"
+      {:name ::not-found
+       :view #(refx/dispatch [:push-state ::home])}]])
