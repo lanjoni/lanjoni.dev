@@ -1,8 +1,8 @@
 (ns dev.lanjoni.views.writing
-  (:require
-   [dev.lanjoni.panels.landing :refer [landing]]
-   [helix.core :refer [$ defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [dev.lanjoni.panels.landing :refer [landing]]
+            [helix.core :refer [$]]
+            [helix.dom :as d]))
 
 (def ^:private content-list
   {:posts
@@ -33,6 +33,7 @@
          {:className "space-y-6"}
          (for [{:keys [title description published-at path tags]} (:posts content-list)]
            (d/div
+            {:key path}
             (d/h2
              {:className "text-3xl font-bold"}
              (d/a
@@ -49,5 +50,6 @@
              {:className "space-x-2"}
              (for [tag tags]
                (d/span
-                {:className "text-sm text-[#666666] bg-[#F3F4F6] px-2 py-1 rounded"}
+                {:className "text-sm text-[#666666] bg-[#F3F4F6] px-2 py-1 rounded"
+                 :key tag}
                 tag))))))))}))

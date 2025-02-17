@@ -1,10 +1,9 @@
 (ns dev.lanjoni.components.theme-controller
-  (:require
-   [dev.lanjoni.utils :as utils]
-   [dev.lanjoni.hooks :as hooks]
-   [helix.core :refer [defnc]]
-   [helix.dom :as d]
-   [refx.alpha :as refx]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [dev.lanjoni.utils :as utils]
+            [dev.lanjoni.hooks :as hooks]
+            [helix.dom :as d]
+            [refx.alpha :as refx]))
 
 (defnc theme-controller [{:keys [_]}]
   (let [dark-mode (refx/use-sub [:dark-mode])]

@@ -1,9 +1,9 @@
 (ns dev.lanjoni.panels.landing
-  (:require
-   [dev.lanjoni.panels.navbar :refer [navbar]]
-   [dev.lanjoni.panels.footer :refer [footer]]
-   [helix.core :refer [$ defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [dev.lanjoni.panels.navbar :refer [navbar]]
+            [dev.lanjoni.panels.footer :refer [footer]]
+            [helix.core :refer [$]]
+            [helix.dom :as d]))
 
 (defnc landing
   [{:keys [content]}]

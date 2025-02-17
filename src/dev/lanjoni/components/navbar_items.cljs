@@ -1,7 +1,6 @@
 (ns dev.lanjoni.components.navbar-items
-  (:require
-   [helix.core :refer [defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [helix.dom :as d]))
 
 (defnc navbar-items
   [{:keys [class-properties tab-index]}]

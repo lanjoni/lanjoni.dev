@@ -1,8 +1,8 @@
 (ns dev.lanjoni.views.home
-  (:require
-   [dev.lanjoni.panels.landing :refer [landing]]
-   [helix.core :refer [$ defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [dev.lanjoni.panels.landing :refer [landing]]
+            [helix.core :refer [$]]
+            [helix.dom :as d]))
 
 (defnc home [{:keys [_]}]
   ($ landing

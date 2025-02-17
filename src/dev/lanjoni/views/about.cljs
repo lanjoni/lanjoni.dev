@@ -1,11 +1,34 @@
 (ns dev.lanjoni.views.about
-  (:require
-   [dev.lanjoni.components.link :refer [link]]
-   [dev.lanjoni.components.content-list :refer [content-list]]
-   [dev.lanjoni.components.content-topic :refer [content-topic]]
-   [dev.lanjoni.panels.landing :refer [landing]]
-   [helix.core :refer [$ defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.components.link :refer [link]]
+            [dev.lanjoni.components.content-list :refer [content-list]]
+            [dev.lanjoni.components.content-topic :refer [content-topic]]
+            [dev.lanjoni.infra.helix :refer [defnc]]
+            [dev.lanjoni.panels.landing :refer [landing]]
+            [helix.core :refer [$]]
+            [helix.dom :as d]))
+
+(def content
+  [{:url "https://github.com/lanjoni/crystal4noobs"
+    :title "crystal4noobs"
+    :description "a complete guide to crystal programming language which is responsible for my start inside the open-source community and the ambassadors program (so I'm the first - and unique - crystal ambassador from Brazil)"}
+   {:url "https://github.com/lanjoni/lpi4noobs"
+    :title "lpi4noobs"
+    :description "a complete guide to the Linux Professional Institute Essentials certification (in Portuguese)"}
+   {:url "https://github.com/lanjoni/clojure4noobs"
+    :title "clojure4noobs"
+    :description "a complete guide to Clojure programming language (in Portuguese)"}
+   {:url "https://github.com/emerauth/emerauth"
+    :title "emerauth"
+    :description "hands-free, configurable and extensible authentication & authorization"}
+   {:url "https://github.com/lanjoni/hackacrow"
+    :title "hackacrow"
+    :description "a test runner for any programming language (written in Crystal)"}
+   {:url "https://github.com/lanjoni/datomic-getting-started"
+    :title "datomic-getting-started"
+    :description "a getting started guide to Datomic"}
+   {:url "https://github.com/lanjoni/snowflake"
+    :title "snowflake"
+    :description "a simple and fast configuration template for nix-darwin"}])
 
 (defnc about [{:keys [_]}]
   ($ landing
@@ -70,25 +93,4 @@
            :content (d/ul
                      {:className "list-disc list-inside"}
                      ($ content-list
-                        {:content
-                         [{:url "https://github.com/lanjoni/crystal4noobs"
-                           :title "crystal4noobs"
-                           :description "a complete guide to crystal programming language which is responsible for my start inside the open-source community and the ambassadors program (so I'm the first - and unique - crystal ambassador from Brazil)"}
-                          {:url "https://github.com/lanjoni/lpi4noobs"
-                           :title "lpi4noobs"
-                           :description "a complete guide to the Linux Professional Institute Essentials certification (in Portuguese)"}
-                          {:url "https://github.com/lanjoni/clojure4noobs"
-                           :title "clojure4noobs"
-                           :description "a complete guide to Clojure programming language (in Portuguese)"}
-                          {:url "https://github.com/emerauth/emerauth"
-                           :title "emerauth"
-                           :description "hands-free, configurable and extensible authentication & authorization"}
-                          {:url "https://github.com/lanjoni/hackacrow"
-                           :title "hackacrow"
-                           :description "a test runner for any programming language (written in Crystal)"}
-                          {:url "https://github.com/lanjoni/datomic-getting-started"
-                           :title "datomic-getting-started"
-                           :description "a getting started guide to Datomic"}
-                          {:url "https://github.com/lanjoni/snowflake"
-                           :title "snowflake"
-                           :description "a simple and fast configuration template for nix-darwin"}]}))}))}))
+                        {:content content}))}))}))

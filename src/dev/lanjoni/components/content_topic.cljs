@@ -1,7 +1,6 @@
 (ns dev.lanjoni.components.content-topic
-  (:require
-   [helix.core :refer [defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [helix.dom :as d]))
 
 (defnc content-topic [{:keys [title content]}]
   (d/div

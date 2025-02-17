@@ -1,8 +1,7 @@
 (ns dev.lanjoni.events
-  (:require
-   [refx.alpha :as refx]
-   [reitit.frontend.controllers :as rfc]
-   [reitit.frontend.easy :as rfe]))
+  (:require [refx.alpha :as refx]
+            [reitit.frontend.controllers :as rfc]
+            [reitit.frontend.easy :as rfe]))
 
 (refx/reg-fx
  :push-state

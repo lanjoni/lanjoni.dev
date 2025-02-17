@@ -1,6 +1,5 @@
 (ns dev.lanjoni.subs
-  (:require
-   [refx.alpha :as refx]))
+  (:require [refx.alpha :as refx]))
 
 (refx/reg-sub
  :db

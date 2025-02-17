@@ -1,7 +1,6 @@
 (ns dev.lanjoni.panels.footer
-  (:require
-   [helix.core :refer [defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [helix.dom :as d]))
 
 (defnc footer
   [{:keys [_]}]
