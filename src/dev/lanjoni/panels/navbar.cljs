@@ -1,9 +1,9 @@
 (ns dev.lanjoni.panels.navbar
-  (:require
-   [dev.lanjoni.components.navbar-items :refer [navbar-items]]
-   [dev.lanjoni.components.theme-controller :refer [theme-controller]]
-   [helix.core :refer [$ defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [dev.lanjoni.components.navbar-items :refer [navbar-items]]
+            [dev.lanjoni.components.theme-controller :refer [theme-controller]]
+            [helix.core :refer [$]]
+            [helix.dom :as d]))
 
 (defnc navbar [{:keys [_]}]
   (d/div

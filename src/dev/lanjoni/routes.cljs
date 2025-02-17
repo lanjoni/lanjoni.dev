@@ -1,10 +1,10 @@
 (ns dev.lanjoni.routes
-  (:require
-   [dev.lanjoni.views.about :refer [about]]
-   [dev.lanjoni.views.content :refer [content]]
-   [dev.lanjoni.views.home :refer [home]]
-   [dev.lanjoni.views.writing :refer [writing]]
-   [refx.alpha :as refx]))
+  (:require [dev.lanjoni.views.about :refer [about]]
+            [dev.lanjoni.views.content :refer [content]]
+            [dev.lanjoni.views.content.state :as content.state]
+            [dev.lanjoni.views.home :refer [home]]
+            [dev.lanjoni.views.writing :refer [writing]]
+            [refx.alpha :as refx]))
 
 (def routes
   ["/"
@@ -43,10 +43,10 @@
      :view      content
      :link-text "content"
      :controllers
-     [{;; Do whatever initialization needed for home page
-       ;; I.e (refx/dispatch [::events/load-something-with-ajax])
-       ;; Teardown can be done here.
-       }]}]
+     [{:parameters {:path [:content-name]}
+       :start (fn [& params]
+                (let [{:keys [content-name]} (-> params first :path)]
+                  (content.state/content-fetch content-name)))}]}]
 
    ["not-found*"
     {:name ::not-found

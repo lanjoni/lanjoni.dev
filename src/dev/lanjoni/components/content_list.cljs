@@ -1,7 +1,6 @@
 (ns dev.lanjoni.components.content-list
-  (:require
-   [helix.core :refer [defnc]]
-   [helix.dom :as d]))
+  (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [helix.dom :as d]))
 
 (defnc content-list
   [{:keys [content]}]
