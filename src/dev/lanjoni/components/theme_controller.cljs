@@ -1,20 +1,19 @@
 (ns dev.lanjoni.components.theme-controller
   (:require [dev.lanjoni.infra.helix :refer [defnc]]
+            [dev.lanjoni.infra.flex.hook :refer [use-flex]]
+            [dev.lanjoni.infra.user-config.state :as user-config.state]
             [dev.lanjoni.utils :as utils]
-            [dev.lanjoni.hooks :as hooks]
-            [helix.dom :as d]
-            [refx.alpha :as refx]))
+            [helix.hooks :as hooks]
+            [helix.dom :as d]))
 
 (defnc theme-controller [{:keys [_]}]
-  (let [dark-mode (refx/use-sub [:dark-mode])]
+  (let [dark-mode (use-flex user-config.state/dark-mode-signal)]
     ;; fetch dark mode for the first time
-    (hooks/fetch-dark-mode)
+    (hooks/use-effect [dark-mode] (utils/apply-theme dark-mode))
 
     (letfn [(toggle-theme []
               (let [new-dark-mode (not dark-mode)]
-                (refx/dispatch-sync [:set-dark-mode new-dark-mode])
-                (utils/set-stored-theme new-dark-mode)
-                (utils/apply-theme new-dark-mode)))]
+                (user-config.state/config #(assoc % :dark-mode new-dark-mode))))]
 
       (d/label
        (d/input
