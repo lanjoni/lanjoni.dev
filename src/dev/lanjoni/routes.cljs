@@ -3,8 +3,7 @@
             [dev.lanjoni.views.content :refer [content]]
             [dev.lanjoni.views.content.state :as content.state]
             [dev.lanjoni.views.home :refer [home]]
-            [dev.lanjoni.views.writing :refer [writing]]
-            #_[refx.alpha :as refx]))
+            [dev.lanjoni.views.writing :refer [writing]]))
 
 (def routes
   ["/"
@@ -33,8 +32,4 @@
      :controllers [{:parameters {:path [:content-name]}
                     :start (fn [& params]
                              (let [{:keys [content-name]} (-> params first :path)]
-                               (content.state/content-fetch content-name)))}]}]
-
-   #_["not-found*"
-      {:name ::not-found
-       :view #(refx/dispatch [:push-state ::home])}]])
+                               (content.state/content-fetch content-name)))}]}]])
