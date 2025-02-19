@@ -1,14 +1,13 @@
-(ns dev.lanjoni.panels.landing
+(ns dev.lanjoni.panels.shell.view
   (:require [dev.lanjoni.infra.helix :refer [defnc]]
-            [dev.lanjoni.panels.navbar :refer [navbar]]
-            [dev.lanjoni.panels.footer :refer [footer]]
+            [dev.lanjoni.panels.shell.components :refer [navbar footer]]
             [helix.core :refer [$]]
             [helix.dom :as d]))
 
-(defnc landing
+(defnc app-shell
   [{:keys [content]}]
   (d/div
    {:class "container lg:mx-auto lg:max-w-screen-lg px-4 max-w-screen-sm flex flex-col min-h-screen"}
    ($ navbar {})
-   content
+   ($ content)
    ($ footer {})))

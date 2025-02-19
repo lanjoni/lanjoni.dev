@@ -1,16 +1,21 @@
 {
   "name": "lanjoni.dev",
   "version": "1.0.0",
-  "description": "website",
-  "main": "index.js",
+  "description": "static personal blog and markdown article website built using helix, flex and tailwind css (with no backend). ",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "shadow-cljs watch app",
     "release": "shadow-cljs release app"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanjoni/lanjoni.dev.git"
+  },
+  "author": "João Lanjoni",
+  "bugs": {
+    "url": "https://github.com/lanjoni/lanjoni.dev/issues"
+  },
+  "homepage": "https://github.com/lanjoni/lanjoni.dev#readme",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

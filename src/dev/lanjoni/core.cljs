@@ -1,53 +1,25 @@
 (ns dev.lanjoni.core
-  (:require ["react" :as react]
-            ["react-dom/client" :as react-dom-client]
-            [dev.lanjoni.events]
+  (:require ["react-dom/client" :as rdom]
+            [dev.lanjoni.infra.flex.hook :refer [use-flex]]
             [dev.lanjoni.infra.helix :refer [defnc]]
-            [dev.lanjoni.routes :as routes]
-            [dev.lanjoni.subs]
-            [helix.core :refer [$]]
-            [refx.alpha :as refx]
-            [reitit.coercion.spec :as rss]
-            [reitit.frontend :as rf]
-            [reitit.frontend.easy :as rfe]))
+            [dev.lanjoni.infra.routes.core :refer [init-routes!]]
+            [dev.lanjoni.infra.routes.state :refer [routes-db]]
+            [dev.lanjoni.panels.shell.view :refer [app-shell]]
+            [dev.lanjoni.panels.error.view :refer [not-found]]
+            [helix.core :refer [$]]))
 
-(defn on-navigate [new-match]
-  (when new-match
-    (refx/dispatch [:navigated new-match])))
+(defnc app [{:keys []}]
+  (let [{:keys [current-route]} (use-flex routes-db)]
+    (if-let [view (-> current-route :data :view)]
+      ($ app-shell {:content view})
+      ($ not-found))))
 
-(def router
-  (rf/router
-   routes/routes
-   {:data {:coercion rss/coercion}}))
-
-(defn init-routes! []
-  (rfe/start!
-   router
-   on-navigate
-   ; use # fragment on route
-   ; to not use this on servers you need special rules
-   ; to redirect 404 to index.html configuration
-   ; check ./nginx folder for an working docker example
-   {:use-fragment true}))
-
-(defnc router-component [{:keys [_]}]
-  (let [current-route (refx/use-sub [:current-route])]
-    (when current-route
-      (-> current-route :data :view $))))
-
-(enable-console-print!)
-
-(defonce root (react-dom-client/createRoot (js/document.getElementById "app")))
+(defonce root
+  (rdom/createRoot (js/document.getElementById "app")))
 
 (defn render []
-  (.render root ($ router-component {:router router})))
-
-(defn ^:dev/after-load clear-cache-and-render! []
-  (refx/clear-subscription-cache!)
-  (render))
+  (.render root ($ app)))
 
 (defn ^:export init []
-  (refx/dispatch-sync [:initialize-db])
-  (refx/dispatch [:set-dark-mode true])
   (init-routes!)
   (render))
