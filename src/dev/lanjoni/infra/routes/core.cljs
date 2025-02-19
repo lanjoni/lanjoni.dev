@@ -11,5 +11,5 @@
 
 (defn init-routes! []
   (let [router (rf/router routes {:data {:coercion rss/coercion}})]
-    (routes.state/routes-db #(assoc % :router router))
+    (routes.state/routes-db assoc :router router)
     (rfe/start! router on-navigate {:use-fragment true})))

@@ -1,10 +1,29 @@
-(ns dev.lanjoni.components.theme-controller
+(ns dev.lanjoni.panels.shell.components
   (:require [dev.lanjoni.infra.helix :refer [defnc]]
             [dev.lanjoni.infra.flex.hook :refer [use-flex]]
             [dev.lanjoni.infra.user-config.state :as user-config.state]
             [dev.lanjoni.utils :as utils]
+            [helix.core :refer [$]]
             [helix.hooks :as hooks]
             [helix.dom :as d]))
+
+(defnc navbar-items
+  [{:keys [class-properties tab-index]}]
+  (d/ul
+   {:tabIndex tab-index
+    :className class-properties}
+   (d/li
+    (d/a
+     {:href "/#/"}
+     "home"))
+   (d/li
+    (d/a
+     {:href "/#/about"}
+     "about"))
+   (d/li
+    (d/a
+     {:href   "/#/writing"}
+     "writing"))))
 
 (defnc theme-controller [{:keys [_]}]
   (let [dark-mode (use-flex user-config.state/dark-mode-signal)]
@@ -35,3 +54,43 @@
            :viewBox "0 0 24 24"}
           (d/path
            {:d "M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"})))))))
+
+(defnc navbar [{:keys [_]}]
+  (d/div
+   {:className "navbar bg-base-100"}
+   (d/div
+    {:className "navbar-start"}
+    (d/div
+     {:className "dropdown"}
+     (d/div
+      {:tabIndex 0
+       :role "button"
+       :className "btn btn-ghost lg:hidden"}
+      (d/svg
+       {:xmlns "http://www.w3.org/2000/svg"
+        :className "h-5 w-5"
+        :fill "none"
+        :viewBox "0 0 24 24"
+        :stroke "currentColor"}
+       (d/path
+        {:strokeLinecap "round"
+         :strokeLinejoin "round"
+         :strokeWidth 2
+         :d "M4 6h16M4 12h8m-8 6h16"})))
+     ($ navbar-items {:tab-index 0
+                      :class-properties "menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"})))
+   (d/div
+    {:className "navbar-center hidden lg:flex"}
+    ($ navbar-items {:tab-index 0
+                     :class-properties "menu menu-horizontal px-1 text-lg"}))
+   (d/div
+    {:className "navbar-end"}
+    ($ theme-controller {}))))
+
+(defnc footer
+  [{:keys [_]}]
+  (let [current-year (.getFullYear (js/Date.))]
+    (d/footer
+     {:className "footer footer-center bg-base text-base-content p-4 mt-auto"}
+     (d/aside
+      (d/p "copyleft " current-year " - none right reserved by guto lanjoni")))))

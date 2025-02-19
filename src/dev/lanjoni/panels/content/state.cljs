@@ -1,13 +1,12 @@
-(ns dev.lanjoni.views.content.state
+(ns dev.lanjoni.panels.content.state
   (:require [dev.lanjoni.infra.http :as http]
-            [dev.lanjoni.adapters.url :refer [safe-href->url-encoded]]
             [town.lilac.flex :as flex]
             [town.lilac.flex.promise :as flex.promise]))
 
 (def content-fetch
   (flex.promise/resource
    (fn [content-name]
-     (-> (http/request! {:path   (safe-href->url-encoded (str "/md/" content-name ".md"))
+     (-> (http/request! {:path   (str "/md/" content-name ".md")
                          :method :get})
          (.then (fn [response]
                   (-> response :body)))
