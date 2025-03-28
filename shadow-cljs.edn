@@ -1,15 +1,20 @@
-{:deps true
- :nrepl {:port 8777}
- :dev-http {8200 "public"}
- :builds {:app
-          {:target :browser
-           :output-dir "public/js"
-           :modules {:app {:init-fn dev.lanjoni.core/init}}
-           :dev {:build-hooks [(teknql.tailwind/start-watch!)]}
-           :release
-           {:build-hooks [(teknql.tailwind/compile-release!)]}
-           :devtools {:http-root "public"
-                      :http-port 8300}
-           :tailwind/output "public/css/bundle.css"
-           :tailwind/files {:base-path "."
-                            :tailwind.css "public/css/index.css"}}}}
+{:deps {:aliases [:dev]}
+ :dev-http {5000 "public"
+            5001 "public/test"}
+ :builds {:app {:target          :browser
+                :output-dir      "public/js"
+                :modules         {:app {:init-fn dev.lanjoni.core/init}}
+                :dev             {:build-hooks [(teknql.tailwind/start-watch!)]}
+                :release         {:build-hooks [(teknql.tailwind/compile-release!)]}
+                :devtools        {:preloads [dev.lanjoni.refresh]
+                                  :reload-strategy :full}
+                :tailwind/output "public/css/bundle.css"
+                :tailwind/files  {:base-path "."
+                                  :tailwind.css "public/css/index.css"}}
+          :test {:target    :browser-test
+                 :test-dir  "public/test"
+                 :ns-regexp "-test$"}
+
+          :ci-test {:target :karma
+                    :output-to "public/test/ci.js"
+                    :ns-regexp "-test$"}}}
