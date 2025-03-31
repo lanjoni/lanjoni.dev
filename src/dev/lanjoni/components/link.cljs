@@ -7,5 +7,6 @@
   (d/a
    {:href url
     :target "_blank"
-    :className "underline hover:text-[#666666] transition duration-300"}
+    :className "underline hover:text-[#666666] transition duration-300"
+    :data-testid "link-component"}
    title))
