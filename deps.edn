@@ -7,8 +7,7 @@
         metosin/reitit-frontend {:mvn/version "0.5.18"}
         metosin/reitit-spec     {:mvn/version "0.5.18"}
         funcool/promesa         {:mvn/version "11.0.678"}
-        mhuebert/kitchen-async  {:mvn/version "0.1.0"}
-        org.clj-commons/digest  {:mvn/version "1.4.100"}}
+        mhuebert/kitchen-async  {:mvn/version "0.1.0"}}
  :aliases {:dev {:extra-paths ["test"]
                  :extra-deps {nubank/matcher-combinators {:mvn/version "3.9.1"}
                               thheller/shadow-cljs {:mvn/version "2.28.10"}
