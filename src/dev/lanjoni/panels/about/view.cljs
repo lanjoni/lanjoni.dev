@@ -74,14 +74,14 @@
                   (d/del "software engineer at "
                          (d/a {:href "https://nimblevirtual.com.br/"
                                :target "_blank"
-                               :className "underline font-bold hover:text-[#666666] transition duration-300"}
+                               :className "underline font-bold hover:text-gray transition duration-300"}
                               "nimble")))
                  (d/p
                   {:className "text-xl font-bold"}
                   "software engineer at "
                   (d/a {:href "https://nubank.com.br"
                         :target "_blank"
-                        :className "underline font-bold hover:text-[#666666] transition duration-300"}
+                        :className "underline font-bold hover:text-gray transition duration-300"}
                        "nubank")))})
 
    ($ content-topic

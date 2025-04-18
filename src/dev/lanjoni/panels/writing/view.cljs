@@ -34,18 +34,18 @@
          {:className "text-3xl font-bold"}
          (d/a
           {:href (str "#/writing/" path)
-           :className "hover:text-[#666666] transition duration-300"}
+           :className "hover:text-gray transition duration-300"}
           title))
         (d/p
          {:className "text-xl"}
          description)
         (d/p
-         {:className "text-sm text-[#666666]"}
+         {:className "text-sm text-gray"}
          (str "Published at " published-at))
         (d/div
          {:className "space-x-2"}
          (for [tag tags]
            (d/span
-            {:className "text-sm text-[#666666] bg-[#F3F4F6] px-2 py-1 rounded"
+            {:className "text-sm text-gray bg-[#F3F4F6] px-2 py-1 rounded"
              :key tag}
             tag)))))))))

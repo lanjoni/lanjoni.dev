@@ -17,7 +17,7 @@
                                     #(-> (tl/render ($ link {:url "https://docs.clj.codes" :title "clj codes"}))
                                          (.findByTestId "link-component")))]
 
-              (is (match? "<a href=\"https://docs.clj.codes\" target=\"_blank\" class=\"underline hover:text-[#666666] transition duration-300\" data-testid=\"link-component\">clj codes</a>"
+              (is (match? "<a href=\"https://docs.clj.codes\" target=\"_blank\" class=\"underline hover:text-gray transition duration-300\" data-testid=\"link-component\">clj codes</a>"
                           (-> link-component
                               (aget "outerHTML"))))
 

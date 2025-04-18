@@ -6,6 +6,11 @@
   themes: lofi --default, black --prefersdark;
 }
 
+@theme {
+  --color-purple: #820CD1;
+  --color-gray: #666666;
+}
+
 body {
   font-family: 'JetBrains Mono';
   font-size: 22px;
