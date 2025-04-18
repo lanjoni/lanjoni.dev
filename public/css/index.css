@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../../src/dev/lanjoni/**/*.{clj,cljs,cljc}";
+@plugin "@tailwindcss/typography";
+
+@plugin "daisyui" {
+  themes: lofi --default, black --prefersdark;
+}
 
 body {
   font-family: 'JetBrains Mono';
