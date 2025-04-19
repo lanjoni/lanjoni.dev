@@ -27,13 +27,13 @@
      "writing"))))
 
 (defnc theme-controller [{:keys [_]}]
-  (let [dark-mode (use-flex user-config.state/dark-mode-signal)]
+  (let [{:keys [dark-mode]} (use-flex user-config.state/preferences-signal)]
     ;; fetch dark mode for the first time
     (hooks/use-effect [dark-mode] (utils/apply-theme dark-mode))
 
     (letfn [(toggle-theme []
               (let [new-dark-mode (not dark-mode)]
-                (user-config.state/config #(assoc % :dark-mode new-dark-mode))))]
+                (user-config.state/config #(assoc-in % [:preferences :dark-mode] new-dark-mode))))]
 
       (d/label
        (d/input

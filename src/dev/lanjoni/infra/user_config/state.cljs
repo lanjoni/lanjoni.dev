@@ -3,10 +3,10 @@
             [town.lilac.flex :as flex]))
 
 (def config
-  (flex/source {:dark-mode (utils/get-stored-theme)}))
+  (flex/source {:preferences (utils/get-stored-preferences)}))
 
-(def dark-mode-signal
-  (flex/signal (:dark-mode @config)))
+(def preferences-signal
+  (flex/signal (:preferences @config)))
 
-(flex/listen dark-mode-signal
-             #(utils/set-stored-theme %))
+(flex/listen preferences-signal
+             #(utils/set-stored-preferences %))

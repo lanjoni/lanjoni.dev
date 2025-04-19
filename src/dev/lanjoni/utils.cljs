@@ -1,28 +1,15 @@
-(ns dev.lanjoni.utils)
+(ns dev.lanjoni.utils
+  (:require [clojure.edn :as edn]))
 
-(defn get-stored-theme []
-  (let [stored-theme (js/localStorage.getItem "dark-mode")]
-    (or (= stored-theme "true")
-        (= stored-theme nil))))
+(defn get-stored-preferences []
+  (let [stored-preferences (js/localStorage.getItem "preferences")]
+    (if stored-preferences
+      (edn/read-string stored-preferences)
+      {:dark-mode true})))
 
-(defn set-stored-theme [is-dark-mode]
-  (js/localStorage.setItem "dark-mode" (str is-dark-mode)))
+(defn set-stored-preferences [preferences]
+  (js/localStorage.setItem "preferences" (pr-str preferences)))
 
 (defn apply-theme [is-dark-mode]
   (let [theme (if is-dark-mode "black" "lofi")]
     (.setAttribute js/document.documentElement "data-theme" theme)))
-
-;;
-; const userPreferences = {
-;     theme: 'dark',
-;     fontSize: '16px',
-;     language: 'en'
-; };
-;
-; // Storing the object in local storage
-; localStorage.setItem('preferences', JSON.stringify(userPreferences));
-;
-; // Retrieving the object from local storage
-; const savedPreferences = JSON.parse(localStorage.getItem('preferences'));
-;
-; console.log(savedPreferences);  // Output: { theme: "dark", fontSize: "16px", language: "en" }

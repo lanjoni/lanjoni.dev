@@ -7,7 +7,7 @@
 (defnc app-shell
   [{:keys [content]}]
   (d/div
-   {:class "container lg:mx-auto lg:max-w-screen-lg px-4 max-w-screen-sm flex flex-col min-h-screen"}
+   {:className "container lg:mx-auto lg:max-w-screen-lg px-4 max-w-screen-sm flex flex-col min-h-screen"}
    ($ navbar {})
    ($ content)
    ($ footer {})))
