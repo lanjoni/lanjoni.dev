@@ -1,8 +1,8 @@
 (ns dev.lanjoni.panels.shell.view
   (:require [dev.lanjoni.infra.helix :refer [defnc]]
             [dev.lanjoni.panels.shell.components :refer [navbar footer]]
-            [helix.core :refer [$]]
-            [helix.dom :as d]))
+            [helix.dom :as d]
+            [helix.core :refer [$]]))
 
 (defnc app-shell
   [{:keys [content]}]

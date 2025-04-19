@@ -1,11 +1,12 @@
 (ns dev.lanjoni.panels.shell.components
-  (:require [dev.lanjoni.infra.helix :refer [defnc]]
-            [dev.lanjoni.infra.flex.hook :refer [use-flex]]
+  (:require [dev.lanjoni.infra.flex.hook :refer [use-flex]]
+            [dev.lanjoni.infra.helix :refer [defnc]]
             [dev.lanjoni.infra.user-config.state :as user-config.state]
             [dev.lanjoni.utils :as utils]
             [helix.core :refer [$]]
+            [helix.dom :as d]
             [helix.hooks :as hooks]
-            [helix.dom :as d]))
+            [reitit.frontend.easy :as rfe]))
 
 (defnc navbar-items
   [{:keys [class-properties tab-index]}]
@@ -14,15 +15,15 @@
     :className class-properties}
    (d/li
     (d/a
-     {:href "/#/"}
+     {:onClick #(rfe/push-state :dev.lanjoni.routes/home)}
      "home"))
    (d/li
     (d/a
-     {:href "/#/about"}
+     {:onClick #(rfe/push-state :dev.lanjoni.routes/about)}
      "about"))
    (d/li
     (d/a
-     {:href   "/#/writing"}
+     {:onClick #(rfe/push-state :dev.lanjoni.routes/writing)}
      "writing"))))
 
 (defnc theme-controller [{:keys [_]}]

@@ -2,8 +2,9 @@
   (:require [dev.lanjoni.components.loading :refer [loading]]
             [dev.lanjoni.components.markdown :refer [markdown]]
             [dev.lanjoni.infra.flex.hook :refer [use-flex]]
+            [dev.lanjoni.infra.helix :refer [defnc]]
             [dev.lanjoni.panels.content.state :refer [content-response]]
-            [helix.core :refer [$ defnc]]
+            [helix.core :refer [$]]
             [helix.dom :as d]))
 
 (defnc content [{:keys [_]}]

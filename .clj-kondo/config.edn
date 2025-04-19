@@ -1,1 +1,2 @@
-{:hooks {:analyze-call {dev.lanjoni.infra.helix/defnc clj-kondo.lilactown.helix/defnc}}}
+{:hooks {:analyze-call {dev.lanjoni.infra.helix/defnc clj-kondo.lilactown.helix/defnc}}
+ :linters {:redundant-ignore {:exclude [:clojure-lsp/unused-public-var]}}}
