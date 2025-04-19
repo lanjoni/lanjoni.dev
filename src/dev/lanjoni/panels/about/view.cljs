@@ -88,5 +88,4 @@
       {:title "projects"
        :content (d/ul
                  {:className "list-disc list-inside"}
-                 ($ content-list
-                    {:content content}))})))
+                 ($ content-list {:content content}))})))
