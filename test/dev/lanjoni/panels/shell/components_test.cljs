@@ -32,7 +32,7 @@
               (done))))))
 
 (deftest theme-controller-component-test
-  (testing "navbar items component should render with correct properties"
+  (testing "theme controller component should render with correct properties"
     (async done
            (p/catch
             (p/let [theme-controller-component (tl/render ($ components/theme-controller {}))
@@ -47,6 +47,38 @@
                           (-> theme-controller-icon
                               (aget "className")
                               (aget "baseVal"))))
+
+              (done))
+            (fn [err] (is (= nil err))
+              (done))))))
+
+(deftest navbar-component-test
+  (testing "navbar component should render with correct properties"
+    (async done
+           (p/catch
+            (p/let [navbar-component (tl/wait-for
+                                      #(-> (tl/render ($ components/navbar {}))
+                                           (.findByTestId "navbar-component")))]
+
+              (is (match? "navbar bg-base-100"
+                          (-> navbar-component
+                              (aget "className"))))
+
+              (done))
+            (fn [err] (is (= nil err))
+              (done))))))
+
+(deftest footer-component-test
+  (testing "footer component should render with correct properties"
+    (async done
+           (p/catch
+            (p/let [footer-component (tl/wait-for
+                                      #(-> (tl/render ($ components/footer {}))
+                                           (.findByTestId "footer-component")))]
+
+              (is (match? "footer footer-center bg-base text-base-content p-4 mt-auto"
+                          (-> footer-component
+                              (aget "className"))))
 
               (done))
             (fn [err] (is (= nil err))

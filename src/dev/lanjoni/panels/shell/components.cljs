@@ -63,7 +63,8 @@
 
 (defnc navbar [{:keys [_]}]
   (d/div
-   {:className "navbar bg-base-100"}
+   {:className "navbar bg-base-100"
+    :data-testid "navbar-component"}
    (d/div
     {:className "navbar-start"}
     (d/div
@@ -97,6 +98,7 @@
   [{:keys [_]}]
   (let [current-year (.getFullYear (js/Date.))]
     (d/footer
-     {:className "footer footer-center bg-base text-base-content p-4 mt-auto"}
+     {:className "footer footer-center bg-base text-base-content p-4 mt-auto"
+      :data-testid "footer-component"}
      (d/aside
       (d/p "copyleft " current-year " - none right reserved by guto lanjoni")))))
