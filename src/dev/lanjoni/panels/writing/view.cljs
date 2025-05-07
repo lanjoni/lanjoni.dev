@@ -44,7 +44,8 @@
          {:className "text-sm text-gray"}
          (str "Published at " published-at))
         (d/div
-         {:className "space-x-2"}
+         {:className "space-x-2"
+          :data-testid "tag-container"}
          (for [tag tags]
            (d/span
             {:className "text-sm text-gray bg-[#F3F4F6] px-2 py-1 rounded"

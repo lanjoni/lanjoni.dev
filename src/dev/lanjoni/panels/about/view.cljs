@@ -47,7 +47,7 @@
                           :title "twitter"})
                  ($ link {:url "https://dev.to/guto"
                           :title "dev"})
-                 ($ link {:url "mailto:lanjoni@proton.me"
+                 ($ link {:url "mailto:hey@lanjoni.com"
                           :title "email"}))})
 
    ($ content-topic

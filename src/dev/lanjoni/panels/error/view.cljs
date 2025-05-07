@@ -6,7 +6,8 @@
 
 (defnc not-found [{:keys [_]}]
   (d/div
-   {:className "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"}
+   {:className "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    :data-testid "error-view"}
    (d/div
     {:className "flex justify-center items-center flex-col mb-6"}
     (d/h1
