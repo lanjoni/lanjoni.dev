@@ -1,6 +1,7 @@
 (ns dev.lanjoni.panels.writing.view
   (:require [dev.lanjoni.infra.helix :refer [defnc]]
-            [helix.dom :as d]))
+            [helix.dom :as d]
+            [reitit.frontend.easy :as rfe]))
 
 (def ^:private content-list
   {:posts
@@ -33,19 +34,20 @@
         (d/h2
          {:className "text-3xl font-bold"}
          (d/a
-          {:href (str "#/writing/" path)
-           :className "hover:text-[#666666] transition duration-300"}
+          {:onClick #(rfe/push-state :dev.lanjoni.routes/content {:content-name path})
+           :className "cursor-pointer hover:text-gray transition duration-300 ease-in-out"}
           title))
         (d/p
          {:className "text-xl"}
          description)
         (d/p
-         {:className "text-sm text-[#666666]"}
+         {:className "text-sm text-gray"}
          (str "Published at " published-at))
         (d/div
-         {:className "space-x-2"}
+         {:className "space-x-2"
+          :data-testid "tag-container"}
          (for [tag tags]
            (d/span
-            {:className "text-sm text-[#666666] bg-[#F3F4F6] px-2 py-1 rounded"
+            {:className "text-sm text-gray bg-[#F3F4F6] px-2 py-1 rounded"
              :key tag}
             tag)))))))))

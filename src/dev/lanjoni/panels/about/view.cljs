@@ -43,11 +43,13 @@
                           :title "github"})
                  ($ link {:url "https://linkedin.com/in/lanjoni"
                           :title "linkedin"})
+                 ($ link {:url "https://hachyderm.io/@guto"
+                          :title "mastodon"})
                  ($ link {:url "https://x.com/gutolanjoni"
                           :title "twitter"})
                  ($ link {:url "https://dev.to/guto"
                           :title "dev"})
-                 ($ link {:url "mailto:lanjoni@proton.me"
+                 ($ link {:url "mailto:hey@lanjoni.com"
                           :title "email"}))})
 
    ($ content-topic
@@ -74,19 +76,18 @@
                   (d/del "software engineer at "
                          (d/a {:href "https://nimblevirtual.com.br/"
                                :target "_blank"
-                               :className "underline font-bold hover:text-[#666666] transition duration-300"}
+                               :className "underline font-bold hover:text-gray transition duration-300"}
                               "nimble")))
                  (d/p
                   {:className "text-xl font-bold"}
                   "software engineer at "
                   (d/a {:href "https://nubank.com.br"
                         :target "_blank"
-                        :className "underline font-bold hover:text-[#666666] transition duration-300"}
+                        :className "underline font-bold hover:text-gray transition duration-300"}
                        "nubank")))})
 
    ($ content-topic
       {:title "projects"
        :content (d/ul
                  {:className "list-disc list-inside"}
-                 ($ content-list
-                    {:content content}))})))
+                 ($ content-list {:content content}))})))

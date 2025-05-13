@@ -6,7 +6,7 @@
                 :modules         {:app {:init-fn dev.lanjoni.core/init}}
                 :dev             {:build-hooks [(teknql.tailwind/start-watch!)]}
                 :release         {:build-hooks [(teknql.tailwind/compile-release!)]}
-                :devtools        {:preloads [dev.lanjoni.refresh]
+                :devtools        {:preloads [dev.lanjoni.dev]
                                   :reload-strategy :full}
                 :tailwind/output "public/css/bundle.css"
                 :tailwind/files  {:base-path "."
