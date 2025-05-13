@@ -43,6 +43,8 @@
                           :title "github"})
                  ($ link {:url "https://linkedin.com/in/lanjoni"
                           :title "linkedin"})
+                 ($ link {:url "https://hachyderm.io/@guto"
+                          :title "mastodon"})
                  ($ link {:url "https://x.com/gutolanjoni"
                           :title "twitter"})
                  ($ link {:url "https://dev.to/guto"
