@@ -26,6 +26,8 @@
                                            (= (.-textContent l) "github"))) links))
                     (is (some (fn [l] (and (= (.-href l) "https://linkedin.com/in/lanjoni")
                                            (= (.-textContent l) "linkedin"))) links))
+                    (is (some (fn [l] (and (= (.-href l) "https://hachyderm.io/@guto")
+                                           (= (.-textContent l) "mastodon"))) links))
                     (is (some (fn [l] (and (= (.-href l) "https://x.com/gutolanjoni")
                                            (= (.-textContent l) "twitter"))) links))
                     (is (some (fn [l] (and (= (.-href l) "https://dev.to/guto")
