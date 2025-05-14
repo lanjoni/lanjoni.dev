@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os-version: [ubuntu-latest]
-        node-version: [18.x]
+        node-version: [16.x]
     runs-on: ${{ matrix.os-version }}
 
     steps:
@@ -42,7 +42,7 @@ jobs:
     strategy:
       matrix:
         os-version: [ubuntu-latest]
-        node-version: [16.x]
+        node-version: [18.x]
     runs-on: ubuntu-latest
 
     steps:
@@ -69,7 +69,7 @@ jobs:
         npm run release
 
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v4
+      uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/main' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
