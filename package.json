@@ -5,7 +5,7 @@
   "scripts": {
     "ci-tests": "shadow-cljs compile ci-tests && karma start --single-run",
     "dev": "shadow-cljs watch app test",
-    "release": "shadow-cljs release app"
+    "release": "shadow-cljs release app && npx tailwindcss -i ./public/css/index.css -o ./public/css/bundle.css --minify"
   },
   "repository": {
     "type": "git",
