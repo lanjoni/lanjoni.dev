@@ -4,4 +4,5 @@
 /.shadow-cljs
 /node_modules
 /public/js/*
+/public/css/bundle.css
 /public/test/*
