@@ -11,10 +11,10 @@
                 :tailwind/output "public/css/bundle.css"
                 :tailwind/files  {:base-path "."
                                   :tailwind.css "public/css/index.css"}}
-          :test {:target    :browser-test
-                 :test-dir  "public/test"
-                 :ns-regexp "-test$"}
+          :tests {:target    :browser-test
+                  :test-dir  "public/test"
+                  :ns-regexp "-test$"}
 
-          :ci-test {:target :karma
-                    :output-to "public/test/ci.js"
-                    :ns-regexp "-test$"}}}
+          :ci-tests {:target :karma
+                     :output-to "public/test/ci.js"
+                     :ns-regexp "-test$"}}}

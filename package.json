@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "static personal blog and markdown article website built using helix, flex and tailwind css (with no backend). ",
   "scripts": {
-    "ci-test": "shadow-cljs compile ci-test && karma start --single-run",
+    "ci-tests": "shadow-cljs compile ci-tests && karma start --single-run",
     "dev": "shadow-cljs watch app test",
     "release": "shadow-cljs release app"
   },
