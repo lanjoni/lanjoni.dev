@@ -1,16 +1,22 @@
 {:deps {:aliases [:dev]}
  :dev-http {5000 "public"
             5001 "public/test"}
- :builds {:app {:target          :browser
-                :output-dir      "public/js"
-                :modules         {:app {:init-fn dev.lanjoni.core/init}}
-                :dev             {:build-hooks [(teknql.tailwind/start-watch!)]}
-                :release         {:build-hooks [(teknql.tailwind/compile-release!)]}
-                :devtools        {:preloads [dev.lanjoni.dev]
-                                  :reload-strategy :full}
-                :tailwind/output "public/css/bundle.css"
-                :tailwind/files  {:base-path "."
-                                  :tailwind.css "public/css/index.css"}}
+ :builds {:app {:target           :browser
+                :output-dir       "public/js"
+                :modules          {:app {:init-fn dev.lanjoni.core/init}}
+                :dev              {:build-hooks [(teknql.tailwind/start-watch!)]}
+                :release          {:build-hooks [(teknql.tailwind/compile-release!)]}
+                :devtools         {:preloads [dev.lanjoni.dev]
+                                   :reload-strategy :full}
+                :compiler-options {:optimizations :advanced
+                                   :pseudo-names false
+                                   :pretty-print false
+                                   :elide-asserts true
+                                   :fn-invoke-direct true
+                                   :static-fns true}
+                :tailwind/output  "public/css/bundle.css"
+                :tailwind/files   {:base-path "."
+                                   :tailwind.css "public/css/index.css"}}
           :tests {:target    :browser-test
                   :test-dir  "public/test"
                   :ns-regexp "-test$"}
