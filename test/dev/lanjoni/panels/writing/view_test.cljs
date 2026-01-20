@@ -36,7 +36,7 @@
                         posts (-> rendered
                                   (.getAllByRole "heading" #js {:level 2}))]
                   (testing "writing view should render posts correctly"
-                    (is (= 2 (count posts)))
+                    (is (= 3 (count posts)))
                     (doseq [post posts]
                       (is (match? "text-3xl font-bold"
                                   (-> post
@@ -51,7 +51,7 @@
                         tag-containers (-> rendered
                                            (.getAllByTestId "tag-container"))]
                   (testing "writing view should render tags correctly"
-                    (is (= 2 (count tag-containers)))
+                    (is (= 3 (count tag-containers)))
                     (doseq [container tag-containers]
                       (is (match? "space-x-2"
                                   (-> container
