@@ -5,7 +5,13 @@
 
 (def ^:private content-list
   {:posts
-   [{:title "Meet Datomic: the immutable and functional database."
+   [{:title "Building elegant web applications with ClojureScript, React, and UIx! (Clojure South 2025)"
+     :description "Clojure South is back in 2025! Here are some useful links from my presentation."
+     :published-at "2025-10-07"
+     :path "clojure-south-2025"
+     :tags ["clojurescript" "uix" "react"]}
+
+    {:title "Meet Datomic: the immutable and functional database."
      :description "Datomic is a functional database that provides a new way to think about databases!"
      :published-at "2024-04-15"
      :path "meet-datomic"
