@@ -9,7 +9,7 @@
      :description "Feelings are part of us as humans, so it's okay to miss someone. (This post is unrelated to software engineering.)"
      :published-at "2026-04-23"
      :path "its-okay-to-miss-someone"
-     :tags ["feelings" "saudade" "love"]}
+     :tags ["feelings" "saudade"]}
 
     {:title "Building elegant web applications with ClojureScript, React, and UIx! (Clojure South 2025)"
      :description "Clojure South is back in 2025! Here are some useful links from my presentation."
