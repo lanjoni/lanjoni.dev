@@ -88,9 +88,6 @@ npm run dev
 - [flex](https://github.com/lilactown/flex)
 - [tailwind css](https://github.com/tailwindlabs/tailwindcss)
 
-## TODO
-- [ ] Test: add sample tests
-
 # License
 This is free and unencumbered software released into the public domain.  
 For more information, please refer to <http://unlicense.org>
