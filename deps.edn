@@ -1,8 +1,8 @@
 {:paths ["src"]
  :deps {lilactown/helix         {:git/url "https://github.com/lilactown/helix"
-                                 :git/sha "32178efcdc38b1e94a01212220018d74f90859d6"}
+                                 :git/sha "bab74be423fc69a9f7d136dbee0c2f3aec11da67"}
         town.lilac/flex         {:git/url "https://github.com/lilactown/flex"
-                                 :git/sha "afa6491ace9015577ffa9245086f945825a93633"}
+                                 :git/sha "346bad039b560a62529a39af66e0afe35565b125"}
         lambdaisland/fetch      {:mvn/version "1.5.83"}
         metosin/reitit-frontend {:mvn/version "0.5.18"}
         metosin/reitit-spec     {:mvn/version "0.5.18"}
