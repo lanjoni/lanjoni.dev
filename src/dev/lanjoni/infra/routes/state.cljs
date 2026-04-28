@@ -13,4 +13,4 @@
     (when-not (:fragment new-match)
       (.scrollTo js/window 0 0))
 
-    (routes-db assoc :current-route (assoc new-match :controllers controllers))))
+    (routes-db #(assoc % :current-route (assoc new-match :controllers controllers)))))

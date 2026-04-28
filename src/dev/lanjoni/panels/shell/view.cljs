@@ -5,10 +5,10 @@
             [helix.core :refer [$]]))
 
 (defnc app-shell
-  [{:keys [content]}]
+  [{:keys [content current-route]}]
   (d/div
    {:className "container lg:mx-auto lg:max-w-screen-lg px-4 max-w-screen-sm flex flex-col min-h-screen"
     :data-testid "app-shell-container"}
    ($ navbar {})
-   ($ content)
+   ($ content {:current-route current-route})
    ($ footer {})))

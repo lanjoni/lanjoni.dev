@@ -11,7 +11,8 @@
 (defnc app [{:keys []}]
   (let [{:keys [current-route]} (use-flex routes-db)]
     (if-let [view (-> current-route :data :view)]
-      ($ app-shell {:content view})
+      ($ app-shell {:content view
+                    :current-route current-route})
       ($ not-found))))
 
 (defonce root

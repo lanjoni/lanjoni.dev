@@ -12,7 +12,6 @@
                        #(flex/dispose! listener)))
                    #js [container])
         snapshot (react/useCallback
-                  (fn [] (binding [flex/*warn-nonreactive-deref* false]
-                           @container))
+                  (fn [] @container)
                   #js [container])]
     (with-selector/useSyncExternalStoreWithSelector subscribe snapshot nil identity =)))
