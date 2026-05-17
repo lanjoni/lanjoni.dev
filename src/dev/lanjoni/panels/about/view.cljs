@@ -56,13 +56,13 @@
       {:title "who am i?"
        :content (d/p
                  {:className "text-xl space-x-3 break-words"}
-                 "a passionate student who always seeks to share knowledge, learn a lot, listen and understand how the world works. currently trying to expand and contribute to open-source projects, participating in communities aimed at democratizing access to technology education.")})
+                 "a passionate developer who always seeks to share knowledge, learn a lot, listen and understand how the world works. currently trying to expand and contribute to open-source projects, participating in communities aimed at democratizing access to technology education.")})
 
    ($ content-topic
       {:title "education"
        :content (d/p
                  {:className "text-xl space-x-3 break-words"}
-                 "computer technician and future bachelor of science in information systems at "
+                 "computer technician and bachelor of science in information systems at "
                  ($ link {:url "https://vtp.ifsp.edu.br/"
                           :title "ifsp"})
                  ". i really like my college and the people i met there.")})
